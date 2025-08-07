@@ -1,0 +1,239 @@
+/* set basic styles for the body (e.g., font-family, margin, padding, background-color). */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Style the header and navigation bar with Copilot’s suggestions for layout, color scheme, and typography. */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+nav {
+    margin: 0 auto;
+    max-width: 800px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* About Me: Use Copilot to style the “About Me” section, focusing on text alignment, font size, and spacing.
+
+Projects: Using Copilot, create a card-like layout for the “Projects” section. Use properties like display: flex, margin, and padding.
+
+Skills: Style the “Skills” list with icons, using Copilot to suggest CSS pseudo-classes like ::before for adding icons.
+
+Contact Form: Create a "contact" section with a form. Use <form>, <input>, <textarea>, and <button> elements. Ensure semantic naming and proper label association for accessibility. */
+/* ...existing code... */
+
+/* About Me Section */
+#about {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 40px auto;
+    max-width: 700px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Projects Section - Card Layout */
+#projects ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    padding: 0;
+    margin: 40px 0;
+}
+#projects li {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 16px;
+    margin: 0;
+    list-style: none;
+    max-width: 300px;
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#projects img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+/* Skills List with Icons */
+#skills ul {
+    padding: 0;
+    margin: 30px auto;
+    max-width: 600px;
+}
+#skills li {
+    list-style: none;
+    font-size: 1rem;
+    margin: 10px 0;
+    position: relative;
+    padding-left: 32px;
+}
+#skills li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.1em;
+    color: #2d8f2d;
+}
+
+/* Contact Form Styles */
+#contact form {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+#contact label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+}
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    margin-bottom: 8px;
+}
+#contact button {
+    background: #2d8f2d;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#contact button:focus,
+#contact button:hover {
+    background: #226622;
+    outline: none;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+/* Responsive Images and Videos */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Layout: Breakpoint at 768px */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+    #projects ul {
+        flex-direction: column;
+        gap: 16px;
+    }
+    #projects li {
+        max-width: 100%;
+    }
+    #about, #skills ul, #contact form {
+        max-width: 95vw;
+        margin: 20px auto;
+        padding: 12px;
+    }
+}
+
+/* Hamburger Menu Icon for Mobile Navigation */
+.hamburger {
+    display: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 28px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+/* Add vendor prefixes for box-shadow, border-radius, and transition for cross-browser compatibility */
+#about,
+#projects li,
+#contact form {
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+#projects img {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+#contact button {
+    -webkit-transition: background 0.2s;
+    transition: background 0.2s;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+
